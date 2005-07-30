@@ -1,0 +1,11 @@
+IF
+  Clicked([ANYONE])
+THEN
+  RESPONSE #100
+    DisplayStringHead(Player1,@500)
+    TriggerActivation("middletop",FALSE)
+    SetGlobal("iiMTDeactivated","GLOBAL",1)
+    SetGlobal("iiMyTurn","GLOBAL",1)
+    CreateVisualEffect("iix",[295.147])
+    SetGlobal("iiPlayerMT","GLOBAL",1)
+END

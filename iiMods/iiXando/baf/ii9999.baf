@@ -1,0 +1,427 @@
+//----------------------------------------------------------------------------
+// General setup stuff
+//----------------------------------------------------------------------------
+IF
+  OnCreation()
+THEN
+  RESPONSE #100
+    Explore()
+    ActionOverride(Player1,JumpToPoint([293.263]))
+    SmallWait(1)
+    ReallyForceSpellRES("ii9999",Player1)
+    FadeFromColor([20.0],0)
+END
+
+//----------------------------------------------------------------------------
+// Winning
+//----------------------------------------------------------------------------
+IF
+  Global("iiPlayerWins","GLOBAL",1)
+THEN
+  RESPONSE #100
+    Explore()
+    DisplayStringHead(Player1,@1001)
+    FadeFromColor([20.0],0)
+END
+
+IF
+  Global("iiIWins","GLOBAL",1)
+THEN
+  RESPONSE #100
+    Explore()
+    DisplayStringHead(Player1,@1002)
+    FadeFromColor([20.0],0)
+END
+
+//----------------------------------------------------------------------------
+// It's my turn, disable everything so the player can't click stuff
+//----------------------------------------------------------------------------
+IF
+  Global("iiMyTurn","GLOBAL",1)
+THEN
+  RESPONSE #100
+    TriggerActivation("topleft",FALSE)
+    TriggerActivation("middlebottom",FALSE)
+    TriggerActivation("middleleft",FALSE)
+    TriggerActivation("middlemiddle",FALSE)
+    TriggerActivation("middletop",FALSE)
+    TriggerActivation("rightbotom",FALSE)
+    TriggerActivation("rightmiddle",FALSE)
+    TriggerActivation("righttop",FALSE)
+    TriggerActivation("bottomleft",FALSE)
+    Continue()
+END
+
+//----------------------------------------------------------------------------
+// Check if we have a winner
+//----------------------------------------------------------------------------
+IF
+  Global("iiPlayerBL","GLOBAL",1)
+  Global("iiPlayerMB","GLOBAL",1)
+  Global("iiPlayerRB","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("iiPlayerWins","GLOBAL",1)
+END
+
+IF
+  Global("iiPlayerML","GLOBAL",1)
+  Global("iiPlayerMM","GLOBAL",1)
+  Global("iiPlayerRM","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("iiPlayerWins","GLOBAL",1)
+END
+
+IF
+  Global("iiPlayerTL","GLOBAL",1)
+  Global("iiPlayerMT","GLOBAL",1)
+  Global("iiPlayerRT","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("iiPlayerWins","GLOBAL",1)
+END
+
+IF
+  Global("iiPlayerBL","GLOBAL",1)
+  Global("iiPlayerML","GLOBAL",1)
+  Global("iiPlayerTL","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("iiPlayerWins","GLOBAL",1)
+END
+
+IF
+  Global("iiPlayerMT","GLOBAL",1)
+  Global("iiPlayerMM","GLOBAL",1)
+  Global("iiPlayerTB","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("iiPlayerWins","GLOBAL",1)
+END
+
+IF
+  Global("iiPlayerRT","GLOBAL",1)
+  Global("iiPlayerRM","GLOBAL",1)
+  Global("iiPlayerRB","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("iiPlayerWins","GLOBAL",1)
+END
+
+IF
+  Global("iiPlayerTL","GLOBAL",1)
+  Global("iiPlayerMM","GLOBAL",1)
+  Global("iiPlayerRB","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("iiPlayerWins","GLOBAL",1)
+END
+
+IF
+  Global("iiPlayerRT","GLOBAL",1)
+  Global("iiPlayerMM","GLOBAL",1)
+  Global("iiPlayerBL","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("iiPlayerWins","GLOBAL",1)
+END
+
+
+
+
+
+IF
+  Global("iiIBL","GLOBAL",1)
+  Global("iiIMB","GLOBAL",1)
+  Global("iiIRB","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("iiIWins","GLOBAL",1)
+END
+
+IF
+  Global("iiIML","GLOBAL",1)
+  Global("iiIMM","GLOBAL",1)
+  Global("iiIRM","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("iiIWins","GLOBAL",1)
+END
+
+IF
+  Global("iiITL","GLOBAL",1)
+  Global("iiIMT","GLOBAL",1)
+  Global("iiIRT","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("iiIWins","GLOBAL",1)
+END
+
+IF
+  Global("iiIBL","GLOBAL",1)
+  Global("iiIML","GLOBAL",1)
+  Global("iiITL","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("iiIWins","GLOBAL",1)
+END
+
+IF
+  Global("iiIMT","GLOBAL",1)
+  Global("iiIMM","GLOBAL",1)
+  Global("iiITB","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("iiIWins","GLOBAL",1)
+END
+
+IF
+  Global("iiIRT","GLOBAL",1)
+  Global("iiIRM","GLOBAL",1)
+  Global("iiIRB","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("iiIWins","GLOBAL",1)
+END
+
+IF
+  Global("iiITL","GLOBAL",1)
+  Global("iiIMM","GLOBAL",1)
+  Global("iiIRB","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("iiIWins","GLOBAL",1)
+END
+
+IF
+  Global("iiIRT","GLOBAL",1)
+  Global("iiIMM","GLOBAL",1)
+  Global("iiIBL","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("iiIWins","GLOBAL",1)
+END
+
+//----------------------------------------------------------------------------
+// It's my turn, 'choose' a region
+//----------------------------------------------------------------------------
+IF
+  Global("iiMyTurn","GLOBAL",1)
+  RandomNum(9,1)
+  !Global("iiTLDeactivated","GLOBAL",1)  
+THEN
+  RESPONSE #100
+    SetGlobal("iiTLDeactivated","GLOBAL",1)
+    DisplayStringHead(Player1,@101)
+    SetGlobal("iiMyTurn","GLOBAL",0)
+    CreateVisualEffect("iio",[149.147])
+    SetGlobal("iiITL","GLOBAL",1)
+END
+
+IF
+  Global("iiMyTurn","GLOBAL",1)
+  RandomNum(9,2)
+  !Global("iiMBDeactivated","GLOBAL",1)  
+THEN
+  RESPONSE #100
+    SetGlobal("iiMBDeactivated","GLOBAL",1)
+    DisplayStringHead(Player1,@201)
+    SetGlobal("iiMyTurn","GLOBAL",0)
+    CreateVisualEffect("iio",[295.375])
+    SetGlobal("iiIMB","GLOBAL",1)
+END
+
+IF
+  Global("iiMyTurn","GLOBAL",1)
+  RandomNum(9,3)
+  !Global("iiMLDeactivated","GLOBAL",1)  
+THEN
+  RESPONSE #100
+    SetGlobal("iiMLDeactivated","GLOBAL",1)
+    DisplayStringHead(Player1,@301)
+    SetGlobal("iiMyTurn","GLOBAL",0)
+    CreateVisualEffect("iio",[149.259])
+    SetGlobal("iiIML","GLOBAL",1)
+END
+
+IF
+  Global("iiMyTurn","GLOBAL",1)
+  RandomNum(9,4)
+  !Global("iiMMDeactivated","GLOBAL",1)  
+THEN
+  RESPONSE #100
+    SetGlobal("iiMMDeactivated","GLOBAL",1)
+    DisplayStringHead(Player1,@401)
+    SetGlobal("iiMyTurn","GLOBAL",0)
+    CreateVisualEffect("iio",[295.259])
+    SetGlobal("iiIMM","GLOBAL",1)
+END
+
+IF
+  Global("iiMyTurn","GLOBAL",1)
+  RandomNum(9,5)
+  !Global("iiMTDeactivated","GLOBAL",1)  
+THEN
+  RESPONSE #100
+    SetGlobal("iiMTDeactivated","GLOBAL",1)
+    DisplayStringHead(Player1,@501)
+    SetGlobal("iiMyTurn","GLOBAL",0)
+    CreateVisualEffect("iio",[295.147])
+    SetGlobal("iiIMT","GLOBAL",1)
+END
+
+IF
+  Global("iiMyTurn","GLOBAL",1)
+  RandomNum(9,6)
+  !Global("iiRBDeactivated","GLOBAL",1)  
+THEN
+  RESPONSE #100
+    SetGlobal("iiRBDeactivated","GLOBAL",1)
+    DisplayStringHead(Player1,@601)
+    SetGlobal("iiMyTurn","GLOBAL",0)
+    CreateVisualEffect("iio",[447.375])
+    SetGlobal("iiIRB","GLOBAL",1)
+END
+
+IF
+  Global("iiMyTurn","GLOBAL",1)
+  RandomNum(9,7)
+  !Global("iiRMDeactivated","GLOBAL",1)  
+THEN
+  RESPONSE #100
+    SetGlobal("iiRMDeactivated","GLOBAL",1)
+    DisplayStringHead(Player1,@701)
+    SetGlobal("iiMyTurn","GLOBAL",0)
+    CreateVisualEffect("iio",[447.259])
+    SetGlobal("iiIRM","GLOBAL",1)
+END
+
+IF
+  Global("iiMyTurn","GLOBAL",1)
+  RandomNum(9,8)
+  !Global("iiRTDeactivated","GLOBAL",1)  
+THEN
+  RESPONSE #100
+    SetGlobal("iiRTDeactivated","GLOBAL",1)
+    DisplayStringHead(Player1,@801)
+    SetGlobal("iiMyTurn","GLOBAL",0)
+    CreateVisualEffect("iio",[447.147])
+    SetGlobal("iiIRT","GLOBAL",1)
+END
+
+IF
+  Global("iiMyTurn","GLOBAL",1)
+  RandomNum(9,9)
+  !Global("iiBLDeactivated","GLOBAL",1)  
+THEN
+  RESPONSE #100
+    SetGlobal("iiBLDeactivated","GLOBAL",1)
+    DisplayStringHead(Player1,@901)
+    SetGlobal("iiMyTurn","GLOBAL",0)
+    CreateVisualEffect("iio",[149.375])
+    SetGlobal("iiIBL","GLOBAL",1)
+END
+
+//----------------------------------------------------------------------------
+// I've had my go, enable the regions that haven't been used
+//----------------------------------------------------------------------------
+IF
+  Global("iiMyTurn","GLOBAL",0)
+  !Global("iiTLDeactivated","GLOBAL",1)
+THEN
+  RESPONSE #100
+    TriggerActivation("topleft",TRUE)
+    Continue()
+END
+
+IF
+  Global("iiMyTurn","GLOBAL",0)
+  !Global("iiMBDeactivated","GLOBAL",1)
+THEN
+  RESPONSE #100
+    TriggerActivation("middlebottom",TRUE)
+    Continue()
+END
+
+IF
+  Global("iiMyTurn","GLOBAL",0)
+  !Global("iiMLDeactivated","GLOBAL",1)
+THEN
+  RESPONSE #100
+    TriggerActivation("middleleft",TRUE)
+    Continue()
+END
+
+IF
+  Global("iiMyTurn","GLOBAL",0)
+  !Global("iiMMDeactivated","GLOBAL",1)
+THEN
+  RESPONSE #100
+    TriggerActivation("middlemiddle",TRUE)
+    Continue()
+END
+
+IF
+  Global("iiMyTurn","GLOBAL",0)
+  !Global("iiMTDeactivated","GLOBAL",1)
+THEN
+  RESPONSE #100
+    TriggerActivation("middletop",TRUE)
+    Continue()
+END
+
+IF
+  Global("iiMyTurn","GLOBAL",0)
+  !Global("iiRBDeactivated","GLOBAL",1)
+THEN
+  RESPONSE #100
+    TriggerActivation("rightbottom",TRUE)
+    Continue()
+END
+
+IF
+  Global("iiMyTurn","GLOBAL",0)
+  !Global("iiRMDeactivated","GLOBAL",1)
+THEN
+  RESPONSE #100
+    TriggerActivation("rightmiddle",TRUE)
+    Continue()
+END
+
+IF
+  Global("iiMyTurn","GLOBAL",0)
+  !Global("iiRTDeactivated","GLOBAL",1)
+THEN
+  RESPONSE #100
+    TriggerActivation("righttop",TRUE)
+    Continue()
+END
+
+IF
+  Global("iiMyTurn","GLOBAL",0)
+  !Global("iiBLDeactivated","GLOBAL",1)
+THEN
+  RESPONSE #100
+    TriggerActivation("bottomleft",TRUE)
+    Continue()
+END
+
+//----------------------------------------------------------------------------
+// If all the regions are used, the game is over
+//----------------------------------------------------------------------------
+IF
+  Global("iiTLDeactivated","GLOBAL",1)
+  Global("iiMBDeactivated","GLOBAL",1)
+  Global("iiMLDeactivated","GLOBAL",1)
+  Global("iiMMDeactivated","GLOBAL",1)
+  Global("iiMTDeactivated","GLOBAL",1)
+  Global("iiRBDeactivated","GLOBAL",1)
+  Global("iiRMDeactivated","GLOBAL",1)
+  Global("iiRTDeactivated","GLOBAL",1)
+  Global("iiBLDeactivated","GLOBAL",1)
+THEN
+  RESPONSE #100
+    DisplayStringHead(Player1,@1000)
+    Continue()
+END

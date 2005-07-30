@@ -1,0 +1,24 @@
+@0 = ~Xando - 1 Day TC~
+
+@100 = ~Bottom left~
+@101 = ~Computer chooses bottom left~
+@200 = ~Middle bottom~
+@201 = ~Computer chooses middle bottom~
+@300 = ~Middle left~
+@301 = ~Computer chooses middle left~
+@400 = ~Middle middle~
+@401 = ~Computer chooses middle middle~
+@500 = ~Middle top~
+@501 = ~Computer chooses middle top~
+@600 = ~Right bottom~
+@601 = ~Computer chooses right bottom~
+@700 = ~Right middle~
+@701 = ~Computer chooses right middle~
+@800 = ~Right top~
+@801 = ~Computer chooses right top~
+@900 = ~Top left~
+@901 = ~Computer chooses top left~
+
+@1000 = ~Game over~
+@1001 = ~Player wins~
+@1002 = ~Computer wins~

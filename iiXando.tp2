@@ -1,0 +1,43 @@
+/* ------------------------------------------------------------------------------------------------------------------------
+// Name:   Xando - a 1 day TC
+// Author: igi
+// Date:   31/07/05
+// -----------------------------------------------------------------------------------------------------------------------*/
+BACKUP ~iiMods/iiXando/backup~
+AUTHOR ~igi~
+LANGUAGE ~English~ ~English~ ~iiMods/iiXando/Languages/English/setup.tra~
+
+// ------------------------------------------------------------------------------------------------------------------------
+
+BEGIN @0
+
+  // 2da
+  COPY ~iiMods/iiXando/2da~ ~override/~
+
+  // Areas
+  COPY ~iiMods/iiXando/are~ ~override/~
+
+  // Animations
+  COPY ~iiMods/iiXando/bam~ ~override/~
+
+  // VVC
+  COPY ~iiMods/iiXando/vvc~ ~override/~
+
+  // SPL
+  COPY ~iiMods/iiXando/spl~ ~override/~
+
+  // Scripts
+  COMPILE ~iiMods/iiXando/baf/ii9999.baf~
+  COMPILE ~iiMods/iiXando/baf/iibl.baf~
+  COMPILE ~iiMods/iiXando/baf/iimb.baf~
+  COMPILE ~iiMods/iiXando/baf/iiml.baf~
+  COMPILE ~iiMods/iiXando/baf/iimm.baf~
+  COMPILE ~iiMods/iiXando/baf/iimt.baf~
+  COMPILE ~iiMods/iiXando/baf/iirb.baf~
+  COMPILE ~iiMods/iiXando/baf/iirm.baf~
+  COMPILE ~iiMods/iiXando/baf/iirt.baf~
+  COMPILE ~iiMods/iiXando/baf/iitl.baf~
+  
+APPEND ~mastarea.2da~
+~ii9999   VALUE~
+UNLESS ~ii9999~
