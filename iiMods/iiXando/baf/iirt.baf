@@ -6,6 +6,7 @@ THEN
     TriggerActivation("righttop",FALSE)
     SetGlobal("iiRTDeactivated","GLOBAL",1)
     SetGlobal("iiMyTurn","GLOBAL",1)
-    CreateVisualEffect("iix",[447.147])
+    CreateCreature("iix",[447.147],0)
     SetGlobal("iiPlayerRT","GLOBAL",1)
+    IncrementGlobal("iiAlive","GLOBAL",1)
 END

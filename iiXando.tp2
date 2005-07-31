@@ -14,6 +14,9 @@ BEGIN @0
   // 2da
   COPY ~iiMods/iiXando/2da~ ~override/~
 
+  // Creatures
+  COPY ~iiMods/iiXando/cre~ ~override/~
+
   // Areas
   COPY ~iiMods/iiXando/are~ ~override/~
 
@@ -37,7 +40,10 @@ BEGIN @0
   COMPILE ~iiMods/iiXando/baf/iirm.baf~
   COMPILE ~iiMods/iiXando/baf/iirt.baf~
   COMPILE ~iiMods/iiXando/baf/iitl.baf~
+  COMPILE ~iiMods/iiXando/baf/iiquit.baf~
+  COMPILE ~iiMods/iiXando/baf/iicre.baf~
+  COMPILE ~iiMods/iiXando/baf/iireset.baf~
   
-APPEND ~mastarea.2da~
-~ii9999   VALUE~
-UNLESS ~ii9999~
+  APPEND ~mastarea.2da~
+    ~ii9999   VALUE~
+  UNLESS ~ii9999~

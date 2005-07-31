@@ -17,7 +17,7 @@
 @800 = ~Right top~
 @801 = ~Computer chooses right top~
 @900 = ~Top left~
-@901 = ~Computer chooses top left~
+@901 = ~Computer chooses bottom left~
 
 @1000 = ~Game over~
 @1001 = ~Player wins~

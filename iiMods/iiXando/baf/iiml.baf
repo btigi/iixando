@@ -6,6 +6,7 @@ THEN
     TriggerActivation("middleleft",FALSE)
     SetGlobal("iiMLDeactivated","GLOBAL",1)
     SetGlobal("iiMyTurn","GLOBAL",1)
-    CreateVisualEffect("iix",[149.259])
+    CreateCreature("iix",[149.259],0)
     SetGlobal("iiPlayerML","GLOBAL",1)
+    IncrementGlobal("iiAlive","GLOBAL",1)
 END

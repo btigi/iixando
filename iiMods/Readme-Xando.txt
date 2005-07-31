@@ -1,4 +1,4 @@
-Xando  1.00
+Xando  2.00
 -----------
 
 +) Contents
@@ -19,6 +19,8 @@ Xando  1.00
 
  To reach the new content, you must start a new SoA game and process through character generation as normal. Once character generation is complete, you should begin Xando.
 
+  If there is any interest, I may continue work on Xando. 
+
 +) Section 2. Requirements
 ==========================
   Xando REQUIRES ToB. It is recommended that the latest BG2:ToB patch (v. 26498) is also installed.
@@ -37,6 +39,7 @@ Xando  1.00
 +) Section 4. Known Issues
 ==========================
 The 'AI' is extremely weak.
+The 'quit' and 'reset' labels do not always appear.
 
 If you find any errors, please let me know immediately, specifying as much as you can about your problem.
 
@@ -48,13 +51,11 @@ My thanks go to the following people, places and things:
   + DLTCEP by Avenger - http://www.dragonlancetc.com/forums/index.php?board=9
   
   + WeiDU by Weimer - http://www.weidu.org/
+  
+  Shed, SConrad - beta testing
 
 +) Section 6. Contact Details
 =============================
 iiXando was created by igi / bt_igi (Marc Wrench)
 eMail: igi@mcwrench.com
 Forum: www.mcwrench.com/forums
-
-+) Section 7. Future Plans
-==========================
-If there is any interest, I may continue work on Xando. By using creatures instead of VVC's for the markers, it would be possible to create a "new game" region, an "exit game" region and even an "undo" region. It would also be nice to scrap character creation since it's not relevant, and update the interface graphics to something more suitable. Of course the AI could do with a boost as well. Still, not bad for a few hours work.

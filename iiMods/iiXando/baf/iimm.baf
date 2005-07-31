@@ -6,6 +6,7 @@ THEN
     TriggerActivation("middlemiddle",FALSE)
     SetGlobal("iiMMDeactivated","GLOBAL",1)
     SetGlobal("iiMyTurn","GLOBAL",1)
-    CreateVisualEffect("iix",[295.259])
+    CreateCreature("iix",[295.259],0)
     SetGlobal("iiPlayerMM","GLOBAL",1)
+    IncrementGlobal("iiAlive","GLOBAL",1)
 END

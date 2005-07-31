@@ -1,15 +1,77 @@
 //----------------------------------------------------------------------------
+// Resetting
+//----------------------------------------------------------------------------
+IF
+  Global("iiReset","GLOBAL",1)
+  Global("iiAlive","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("iiReset","GLOBAL",0)
+    SetGlobal("iiMyTurn","GLOBAL",1)
+END
+
+//----------------------------------------------------------------------------
 // General setup stuff
 //----------------------------------------------------------------------------
 IF
   OnCreation()
 THEN
   RESPONSE #100
+    FadeToColor([0.0],0)
+    HideGUI()
+    Wait(1)
+    CreateVisualEffect("iiquit",[293.42])
+    Wait(2)
+    CreateVisualEffect("iireset",[293.430])
     Explore()
-    ActionOverride(Player1,JumpToPoint([293.263]))
+    ActionOverride(Player1,JumpToPoint([293.293]))
     SmallWait(1)
-    ReallyForceSpellRES("ii9999",Player1)
+    ReallyForceSpellRES("ii9999",Player1)  // ~<NO TEXT>~
     FadeFromColor([20.0],0)
+END
+
+IF
+  Global("iiReset","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("iiPlayerWins","GLOBAL",0)
+    SetGlobal("iiIWins","GLOBAL",0)
+    SetGlobal("iiTLDeactivated","GLOBAL",0)
+    SetGlobal("iiMBDeactivated","GLOBAL",0)
+    SetGlobal("iiMLDeactivated","GLOBAL",0)
+    SetGlobal("iiMMDeactivated","GLOBAL",0)
+    SetGlobal("iiMTDeactivated","GLOBAL",0)
+    SetGlobal("iiRBDeactivated","GLOBAL",0)
+    SetGlobal("iiRMDeactivated","GLOBAL",0)
+    SetGlobal("iiRTDeactivated","GLOBAL",0)
+    SetGlobal("iiBLDeactivated","GLOBAL",0)
+    SetGlobal("iiPlayerBL","GLOBAL",0)
+    SetGlobal("iiPlayerMB","GLOBAL",0)
+    SetGlobal("iiPlayerRB","GLOBAL",0)
+    SetGlobal("iiPlayerML","GLOBAL",0)    
+    SetGlobal("iiPlayerMM","GLOBAL",0)
+    SetGlobal("iiPlayerRM","GLOBAL",0)
+    SetGlobal("iiPlayerTL","GLOBAL",0)
+    SetGlobal("iiPlayerMT","GLOBAL",0)
+    SetGlobal("iiPlayerRT","GLOBAL",0)
+    SetGlobal("iiIBL","GLOBAL",0)
+    SetGlobal("iiIMB","GLOBAL",0)
+    SetGlobal("iiIRB","GLOBAL",0)
+    SetGlobal("iiIML","GLOBAL",0)    
+    SetGlobal("iiIMM","GLOBAL",0)
+    SetGlobal("iiIRM","GLOBAL",0)
+    SetGlobal("iiITL","GLOBAL",0)
+    SetGlobal("iiIMT","GLOBAL",0)
+    SetGlobal("iiIRT","GLOBAL",0)
+    TriggerActivation("topleft",TRUE)
+    TriggerActivation("middlebottom",TRUE)
+    TriggerActivation("middleleft",TRUE)
+    TriggerActivation("middlemiddle",TRUE)
+    TriggerActivation("middletop",TRUE)
+    TriggerActivation("rightbotom",TRUE)
+    TriggerActivation("rightmiddle",TRUE)
+    TriggerActivation("righttop",TRUE)
+    TriggerActivation("bottomleft",TRUE)
 END
 
 //----------------------------------------------------------------------------
@@ -94,7 +156,7 @@ END
 IF
   Global("iiPlayerMT","GLOBAL",1)
   Global("iiPlayerMM","GLOBAL",1)
-  Global("iiPlayerTB","GLOBAL",1)
+  Global("iiPlayerMB","GLOBAL",1)
 THEN
   RESPONSE #100
     SetGlobal("iiPlayerWins","GLOBAL",1)
@@ -170,7 +232,7 @@ END
 IF
   Global("iiIMT","GLOBAL",1)
   Global("iiIMM","GLOBAL",1)
-  Global("iiITB","GLOBAL",1)
+  Global("iiIMB","GLOBAL",1)
 THEN
   RESPONSE #100
     SetGlobal("iiIWins","GLOBAL",1)
@@ -215,8 +277,9 @@ THEN
     SetGlobal("iiTLDeactivated","GLOBAL",1)
     DisplayStringHead(Player1,@101)
     SetGlobal("iiMyTurn","GLOBAL",0)
-    CreateVisualEffect("iio",[149.147])
+    CreateCreature("iio",[149.147],0)
     SetGlobal("iiITL","GLOBAL",1)
+    IncrementGlobal("iiAlive","GLOBAL",1)
 END
 
 IF
@@ -228,8 +291,9 @@ THEN
     SetGlobal("iiMBDeactivated","GLOBAL",1)
     DisplayStringHead(Player1,@201)
     SetGlobal("iiMyTurn","GLOBAL",0)
-    CreateVisualEffect("iio",[295.375])
+    CreateCreature("iio",[295.375],0)
     SetGlobal("iiIMB","GLOBAL",1)
+    IncrementGlobal("iiAlive","GLOBAL",1)
 END
 
 IF
@@ -241,8 +305,9 @@ THEN
     SetGlobal("iiMLDeactivated","GLOBAL",1)
     DisplayStringHead(Player1,@301)
     SetGlobal("iiMyTurn","GLOBAL",0)
-    CreateVisualEffect("iio",[149.259])
+    CreateCreature("iio",[149.259],0)
     SetGlobal("iiIML","GLOBAL",1)
+    IncrementGlobal("iiAlive","GLOBAL",1)
 END
 
 IF
@@ -254,8 +319,9 @@ THEN
     SetGlobal("iiMMDeactivated","GLOBAL",1)
     DisplayStringHead(Player1,@401)
     SetGlobal("iiMyTurn","GLOBAL",0)
-    CreateVisualEffect("iio",[295.259])
+    CreateCreature("iio",[295.259],0)
     SetGlobal("iiIMM","GLOBAL",1)
+    IncrementGlobal("iiAlive","GLOBAL",1)
 END
 
 IF
@@ -267,8 +333,9 @@ THEN
     SetGlobal("iiMTDeactivated","GLOBAL",1)
     DisplayStringHead(Player1,@501)
     SetGlobal("iiMyTurn","GLOBAL",0)
-    CreateVisualEffect("iio",[295.147])
+    CreateCreature("iio",[295.147],0)
     SetGlobal("iiIMT","GLOBAL",1)
+    IncrementGlobal("iiAlive","GLOBAL",1)
 END
 
 IF
@@ -280,8 +347,9 @@ THEN
     SetGlobal("iiRBDeactivated","GLOBAL",1)
     DisplayStringHead(Player1,@601)
     SetGlobal("iiMyTurn","GLOBAL",0)
-    CreateVisualEffect("iio",[447.375])
+    CreateCreature("iio",[447.375],0)
     SetGlobal("iiIRB","GLOBAL",1)
+    IncrementGlobal("iiAlive","GLOBAL",1)
 END
 
 IF
@@ -293,8 +361,9 @@ THEN
     SetGlobal("iiRMDeactivated","GLOBAL",1)
     DisplayStringHead(Player1,@701)
     SetGlobal("iiMyTurn","GLOBAL",0)
-    CreateVisualEffect("iio",[447.259])
+    CreateCreature("iio",[447.259],0)
     SetGlobal("iiIRM","GLOBAL",1)
+    IncrementGlobal("iiAlive","GLOBAL",1)
 END
 
 IF
@@ -306,8 +375,9 @@ THEN
     SetGlobal("iiRTDeactivated","GLOBAL",1)
     DisplayStringHead(Player1,@801)
     SetGlobal("iiMyTurn","GLOBAL",0)
-    CreateVisualEffect("iio",[447.147])
+    CreateCreature("iio",[447.147],0)
     SetGlobal("iiIRT","GLOBAL",1)
+    IncrementGlobal("iiAlive","GLOBAL",1)
 END
 
 IF
@@ -319,8 +389,9 @@ THEN
     SetGlobal("iiBLDeactivated","GLOBAL",1)
     DisplayStringHead(Player1,@901)
     SetGlobal("iiMyTurn","GLOBAL",0)
-    CreateVisualEffect("iio",[149.375])
+    CreateCreature("iio",[149.375],0)
     SetGlobal("iiIBL","GLOBAL",1)
+    IncrementGlobal("iiAlive","GLOBAL",1)
 END
 
 //----------------------------------------------------------------------------

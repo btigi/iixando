@@ -1,0 +1,7 @@
+IF
+  Global("iiReset","GLOBAL",1)
+THEN
+  RESPONSE #100
+    IncrementGlobal("iiAlive","GLOBAL",-1)
+    DestroySelf()
+END
