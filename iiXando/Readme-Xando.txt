@@ -1,5 +1,5 @@
-Xando  2.00
------------
+Xando  2.1
+----------
 
 +) Contents
 ===========
@@ -56,6 +56,4 @@ My thanks go to the following people, places and things:
 
 +) Section 6. Contact Details
 =============================
-iiXando was created by igi / bt_igi (Marc Wrench)
-eMail: igi@mcwrench.com
-Forum: www.mcwrench.com/forums
+iiXando was created by igi

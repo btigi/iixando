@@ -1,0 +1,50 @@
+/* ------------------------------------------------------------------------------------------------------------------------
+// Name:   Xando - a 1 day TC
+// Author: igi
+// Date:   2022/05/19
+// -----------------------------------------------------------------------------------------------------------------------*/
+BACKUP ~iiXando/backup~
+AUTHOR ~igi~
+VERSION ~2.1~
+LANGUAGE ~English~ ~English~ ~iiXando/Languages/English/setup.tra~
+
+// ------------------------------------------------------------------------------------------------------------------------
+
+BEGIN @0
+
+  // 2da
+  COPY ~iiXando/2da~ ~override/~
+
+  // Creatures
+  COPY ~iiXando/cre~ ~override/~
+
+  // Areas
+  COPY ~iiXando/are~ ~override/~
+
+  // Animations
+  COPY ~iiXando/bam~ ~override/~
+
+  // VVC
+  COPY ~iiXando/vvc~ ~override/~
+
+  // SPL
+  COPY ~iiXando/spl~ ~override/~
+
+  // Scripts
+  COMPILE ~iiXando/baf/ii9999.baf~
+  COMPILE ~iiXando/baf/iibl.baf~
+  COMPILE ~iiXando/baf/iimb.baf~
+  COMPILE ~iiXando/baf/iiml.baf~
+  COMPILE ~iiXando/baf/iimm.baf~
+  COMPILE ~iiXando/baf/iimt.baf~
+  COMPILE ~iiXando/baf/iirb.baf~
+  COMPILE ~iiXando/baf/iirm.baf~
+  COMPILE ~iiXando/baf/iirt.baf~
+  COMPILE ~iiXando/baf/iitl.baf~
+  COMPILE ~iiXando/baf/iiquit.baf~
+  COMPILE ~iiXando/baf/iicre.baf~
+  COMPILE ~iiXando/baf/iireset.baf~
+  
+  APPEND ~mastarea.2da~
+    ~ii9999   VALUE~
+  UNLESS ~ii9999~
