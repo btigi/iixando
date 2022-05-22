@@ -56,4 +56,4 @@ My thanks go to the following people, places and things:
 
 +) Section 6. Contact Details
 =============================
-iiXando was created by igi
+Feedback, comments, queries, questions and suggestion should be sent to igi / bt_igi / iggti
